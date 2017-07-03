@@ -1,0 +1,41 @@
+<html>
+   <head>
+      <title>AngularJS Directives</title>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+      <script src="personController.js"> </script>
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+   </head>
+
+   <body  ng-app="fileServer"
+     ng-controller="AppController">
+      <h1>File-server application</h1>
+      <div>
+         <input ng-model="fileName">
+         <button ng-click="requestFile(fileName)">Request file</button>
+
+         <div ng-repeat="(key, val) in files track by $index">
+           {{key}} : {{val}}
+           <button ng-click="showPermissionsFunction(key)">
+             Show info
+           </button>
+           <div ng-show="showAdditionalPermissions[key] == true">
+                <div ng-repeat="(key, val) in filesInfo[key].content">
+                  {{key}}: {{val}}
+                </div>
+           </div>
+          </div>
+      </div>
+      <div>
+        <input ng-model="fileToPost">
+        <input ng-model="fileToPostContent">
+        <button ng-click="postFile(fileToPost, fileToPostContent)">
+          Publish file
+        </button>
+      </div>
+      <div>
+        Select a text file:
+        <input type="file" id="fileInput">
+      </div>
+      <div id="fileDisplayArea"></div>
+   </body>
+</html>

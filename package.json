@@ -1,0 +1,18 @@
+{
+  "name": "internship-task",
+  "version": "1.0.0",
+  "description": "Basic FS server",
+  "main": "server.js",
+  "dependencies": {
+    "md5": "^2.2.1",
+    "request": "2.81.0",
+    "shelljs": "^0.7.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Theodor Stoican",
+  "license": "ISC"
+}
